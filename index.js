@@ -54,7 +54,7 @@ DoorAccessory.prototype.setState = function(state, callback) {
 	var doorState = (state == Characteristic.TargetDoorState.CLOSED) ? "closed" : "open";
 	this.log("Set state to %s", doorState);
 	
-	request.post({
+	request.get({
 		url: this.controlurl
 	}, function(err, response, body) {
 		if (!err && response.statusCode == 200) {

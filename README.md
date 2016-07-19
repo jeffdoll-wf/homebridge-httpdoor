@@ -3,7 +3,7 @@
 Example config.json:
 ```JSON
 	{
-			"accessories": [{
+		"accessories": [{
 			"accessory": "Httpdoor",
 			"name": "Garage Door",
 			"controlURL": "your-control-custom-url",
