@@ -1,0 +1,21 @@
+{
+    "bridge": {
+        "name": "HomebridgePI",
+        "username": "CD:22:3D:E3:CE:30",
+        "port": 51826,
+        "pin": "031-45-156"
+    },
+    
+    "description": "The Onion!",
+
+    "platforms": [],
+
+    "accessories": [
+        {
+            "accessory": "Httpdoor",
+            "name": "Small Garage Door",
+            "controlURL": "http://192.168.0.15:82/?q=send&id=SD1YJ&iid=b17f385c-fd9c-4b97-8e28-597ba6875297",
+            "statusURL": "http://192.168.0.15:82/?q=sensor_status&iid=b17f385c-fd9c-4b97-8e28-597ba6875297"
+        }
+    ]
+}
