@@ -6,7 +6,7 @@
         "pin": "031-45-156"
     },
     
-    "description": "The Onion!",
+    "description": "HTTP Door library modified for voltsec usage",
 
     "platforms": [],
 
@@ -14,8 +14,11 @@
         {
             "accessory": "Httpdoor",
             "name": "Small Garage Door",
-            "controlURL": "http://192.168.0.15:82/?q=send&id=SD1YJ&iid=b17f385c-fd9c-4b97-8e28-597ba6875297",
-            "statusURL": "http://192.168.0.15:82/?q=sensor_status&iid=b17f385c-fd9c-4b97-8e28-597ba6875297"
+            "controlURL": "http://[SYSTEM_IP]:[PORT]/?q=send&id=[DEVICE_ID_HERE]&iid=[SYSTEM_ID_HERE]",
+            "deviceID": "[VOLTSEC_DEVICE_ID]",
+            "openState": "[OPEN_STATE_INT]",
+            "closedState": "[CLOSED_STATE_INT]",
+            "statusURL": "http://[SYSTEM_IP]:[PORT]/?q=sensor_status&iid=[SYSTEM_ID_HERE]"
         }
     ]
 }
