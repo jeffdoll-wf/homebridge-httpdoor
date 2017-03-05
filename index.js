@@ -56,13 +56,28 @@ function parseStateResponse(body, deviceID)
 	return doorState;
 }
 
+
+function getTimeCode()
+{
+	var baseTime = new Date.UTC(2010, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+	var currentTime = new Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(),
+		now.getUTCMinutes(), now.getUTCSeconds());
+
+    var timeDiff = Math.abs(currentTime - baseTime);
+    console.log("timeDiff is %s", timeDiff);
+    return timeDiff;
+
+}
+
 DoorAccessory.prototype.getState = function(callback) {
 	this.log("Getting current state...");
 
 	request.get({
-		url: this.statusURL
+		url: this.statusURL // need to add timeCode here...
 	}, function(err, response, body) {
 		if (!err && response.statusCode == 200) {
+			var timeDiff = getTimeCode();
+			console.log("timeDiff is currently %s", timeDiff);
 			var pollState = parseStateResponse(body, this.deviceID);
 			var closed = pollState == "closed";
 			callback(null, closed); // success
